@@ -7,7 +7,7 @@ public class Calculation {
         while (true) {
             System.out.println("원하는 기능을 선택하세요");
             System.out.println("1.덧셈 2.뺄셈 3.곱셈 4.나눗셈 0.종료");
-            int select = sc.nextInt();
+            double select = sc.nextInt();
             if (select == 0) {
                 break;
             } else if (select > 4) {
@@ -15,25 +15,31 @@ public class Calculation {
                 continue;
             }
             System.out.println("첫번째 값을 입력하고 엔터를 누르세요");
-            int a = sc.nextInt();
+            double a = sc.nextInt();
             System.out.println("두번째 값을 입력하고 엔터를 누르세요");
-            int b = sc.nextInt();
-            System.out.println("결과 :" + calc(select, a, b));
+            double b = sc.nextInt();
+            System.out.println("결과 : " + calc(select, a, b));
         }
 
     }
 
-    public static int calc(int select, int a, int b) {
-        int result = 0;
+    public static double calc(double select, double a, double b) {
+        double result = 0;
         if (select == 1) {
             result = a + b;
+            System.out.println(a + "+" + b + "=" + result);
         } else if (select == 2) {
             result = a - b;
+            System.out.println(a + "-" + b + "=" + result);
         } else if (select == 3) {
             result = a * b;
+            System.out.println(a + "*" + b + "=" + result);
         } else if (select == 4) {
             result = a / b;
+            System.out.println(a + "/" + b + "=" + result);
         }
         return result;
     }
 }
+
+
